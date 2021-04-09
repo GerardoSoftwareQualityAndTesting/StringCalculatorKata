@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+D:\gerar\Documents\1 Escuela\6 Semestre Feb-Jun 2021\4 Pruebas de Software\StringCalculatorKata\.metadata\.plugins\org.eclipse.jdt.core
