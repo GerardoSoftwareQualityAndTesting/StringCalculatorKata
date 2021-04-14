@@ -4,7 +4,7 @@ public class StringCalculator {
 
   public int add(String numbers) {
     if (!numbers.isBlank()) {
-      String[] splitNumbers = numbers.split(",");
+      String[] splitNumbers = numbers.split("\\n|,");
       int sum = 0;
       for (String numString : splitNumbers) {
         sum += Integer.parseInt(numString);
