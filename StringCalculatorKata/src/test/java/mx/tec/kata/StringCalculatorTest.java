@@ -3,6 +3,8 @@ package mx.tec.kata;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
+
 
 class StringCalculatorTest {
 
@@ -60,5 +62,29 @@ class StringCalculatorTest {
 
     int actualResult = calculator.add(inputNumbers);
     assertEquals(expectedResult, actualResult);
+  }
+  
+  @Test
+  void testGivenCalculatorWhenNegative1ThenErrorNegative1() {
+	  Throwable exception = assertThrows(IllegalArgumentException.class, new Executable() {
+		  @Override
+		  public void execute() throws Throwable {
+			  String inputNumbers = "-1,2";
+			  calculator.add(inputNumbers);
+		  }
+	  });
+	  assertEquals("negatives not allowed -1", exception.getMessage());
+  }
+  
+  @Test
+  void testGivenCalculatorWhenNegative1Negative2ThenErrorNegative1Negative2() {
+	  Throwable exception = assertThrows(IllegalArgumentException.class, new Executable() {
+		  @Override
+		  public void execute() throws Throwable {
+			  String inputNumbers = "-1,-2";
+			  calculator.add(inputNumbers);
+		  }
+	  });
+	  assertEquals("negatives not allowed -1, -2", exception.getMessage());
   }
 }
