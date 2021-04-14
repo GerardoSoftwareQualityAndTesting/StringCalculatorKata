@@ -46,8 +46,17 @@ class StringCalculatorTest {
 
   @Test
   void testGivenCalculatorWhenAdd1NewLine2CommaThen3() {
-    int expectedResult = 25;
-    String inputNumbers = "1,3,5,7,9";
+    int expectedResult = 3;
+    String inputNumbers = "1\n2";
+
+    int actualResult = calculator.add(inputNumbers);
+    assertEquals(expectedResult, actualResult);
+  }
+  
+  @Test
+  void testGivenCalculatorWhenDelimiterPercent1Percent2Then3() {
+    int expectedResult = 3;
+    String inputNumbers = "//%\n1%2";
 
     int actualResult = calculator.add(inputNumbers);
     assertEquals(expectedResult, actualResult);
